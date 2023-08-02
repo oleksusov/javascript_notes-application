@@ -178,7 +178,7 @@ function createSummaryTable(actives, archived) {
 
   tbody.innerHTML = '';
 
-    categories.forEach((category) => {
+  categories.forEach((category) => {
     const newRow = tbody.insertRow();
     const categoryCell = newRow.insertCell();
 
