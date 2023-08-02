@@ -74,13 +74,13 @@ function handleUpdateButtonClick(rowElement, noteId) {
 function handleArchiveButtonClick(rowElement, noteId) {
   archivedNotes.push(...notes.splice(noteId, 1));
   rowElement.remove();
-  createSummeryTable(notes, archivedNotes);
+  createSummaryTable(notes, archivedNotes);
 }
 
 function handleDeleteButtonClick(rowElement, noteId) {
   notes.splice(noteId, 1);
   rowElement.remove();
-  createSummeryTable(notes, archivedNotes);
+  createSummaryTable(notes, archivedNotes);
 }
 
 addRowButton.addEventListener('click', () => {
@@ -144,7 +144,7 @@ submitForm.addEventListener('click', (event) => {
         addRowToTable(noteInfo, updateId + 1);
       }
 
-      createSummeryTable(notes, archivedNotes);
+      createSummaryTable(notes, archivedNotes);
       closeForm.click();
     }
   } catch (error) {
@@ -152,7 +152,7 @@ submitForm.addEventListener('click', (event) => {
   }
 });
 
-function addErrorClass() {
+function addErrorClass(error) {
   if (!nameInput.value.trim()) {
     nameInput.classList.add('is-danger');
   }
@@ -172,13 +172,13 @@ function clearErrorClasses() {
   contentInput.classList.remove('is-danger');
 }
 
-function createSummeryTable(actives, archived) {
+function createSummaryTable(actives, archived) {
   const categories = ['Task', 'Random Thought', 'Idea'];
   const tbody = summaryTable.getElementsByTagName('tbody')[0];
 
   tbody.innerHTML = '';
 
-  categories.forEach((category) => {
+    categories.forEach((category) => {
     const newRow = tbody.insertRow();
     const categoryCell = newRow.insertCell();
 
@@ -202,7 +202,7 @@ function initializeTables() {
   notes.forEach((rowData) => {
     addRowToTable(rowData);
   });
-  createSummeryTable(notes, archivedNotes);
+  createSummaryTable(notes, archivedNotes);
 }
 
 initializeTables();
