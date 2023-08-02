@@ -4,6 +4,7 @@ import 'bulma';
 import { months } from './months';
 import { notes } from './notes';
 import { archivedNotes } from './archivedNotes';
+import { createButton } from './helpers';
 
 const table = document.querySelectorAll('.table')[0];
 const summaryTable = document.querySelectorAll('.table')[1];
@@ -47,16 +48,6 @@ function addRowToTable(rowData, index) {
   deleteCell.appendChild(createButton('Delete', 'delete-btn', () => {
     handleDeleteButtonClick(newRow, newRow.rowIndex - 1);
   }));
-}
-
-function createButton(text, className, clickHandler) {
-  const button = document.createElement('button');
-
-  button.textContent = text;
-  button.classList.add('button', className);
-  button.addEventListener('click', clickHandler);
-
-  return button;
 }
 
 function handleUpdateButtonClick(rowElement, noteId) {
