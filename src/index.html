@@ -4,10 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <div class="popup-box">
+      <div class="section">
+        <div class="columns is-centered">
+          <div class="popup column is-one-third">
+            <div class="block">
+              <h2 class="title is-2">Add new Note</h2>
+              <form action="#" class="box">
+                <div class="field">
+                  <label for="name" class="label">Name</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Name"
+                      required
+                    >
+                  </div>
+                </div>
+        
+                <div class="field">
+                  <label for="category" class="label">Category</label>
+                  <div class="control">
+                    <div class="select">
+                      <select name="category" id="category">
+                        <option
+                          value=" "
+                          disabled
+                          selected
+                        >
+                          Choose category
+                        </option>
+                        <option value="Task">Task</option>
+                        <option value="Random Thought">Random Thought</option>
+                        <option value="Idea">Idea</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="field">
+                  <label for="content" class="label">Content</label>
+                  <div class="control">
+                    <textarea
+                      class="textarea"
+                      name="content"
+                      id="content"
+                      placeholder="Note description"
+                    ></textarea>
+                  </div>
+                </div>
+    
+                <button class="
+                  button
+                  is-success
+                  submit-form
+                ">
+                  Add Note
+                </button>
+                <button class="
+                  button
+                  is-light
+                  close-form
+                ">
+                  Cancel
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="block">
+        <button class="add-row-button button">
+          Create Note
+        </button>
+      </div>
+
+      <div class="block">
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Created</th>
+              <th>Category</th>
+              <th>Content</th>
+              <th>Dates</th>
+              <th>Update</th>
+              <th>Archive</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block">
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Note Category</th>
+              <th>Active</th>
+              <th>Archived</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
